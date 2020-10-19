@@ -1,0 +1,12 @@
+package dbmodel;
+
+public class Artikel {
+	int aID;
+	int bID;
+	String headline;
+	String zusammenfassung;
+	String artikelText;
+	boolean istGesperrt = false;
+	int tID;
+	int aufrufe = 0;
+}

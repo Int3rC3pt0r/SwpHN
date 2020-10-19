@@ -1,0 +1,32 @@
+package dbmodel;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class DBManager {
+
+	
+	public Connection getConnection() 
+			throws ClassNotFoundException, SQLException {
+		
+		Connection con = null;		
+		Class.forName("com.mysql.jdbc.Driver");		
+		con = DriverManager.getConnection(  
+					"jdbc:mysql://localhost:3306/ArtikelSeite",  // DB
+					"root",                                 // User
+					""                                      // Passwort
+					);
+		return con;
+	}
+	
+	public void releaseConnection (Connection con) 
+			throws SQLException {
+		
+			if (con != null)
+				con.close();	
+	}
+	
+	
+
+}
