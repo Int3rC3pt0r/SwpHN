@@ -9,17 +9,30 @@ public class Artikel {
 	boolean istGesperrt = false;
 	int tID;
 	int aufrufe = 0;
-	public Artikel(int aID, int bID, String headline, String zusammenfassung, String artikelText, int tID,
-			int aufrufe) {
+	
+	public Artikel() {
+		super();
+		this.aID = -1;
+		this.bID = -1;
+		this.headline = "";
+		this.zusammenfassung = "";
+		this.artikelText = "";
+		this.istGesperrt = false;
+		this.tID = -1;
+	}
+	
+	public Artikel(int aID, int bID, String headline, String zusammenfassung, String artikelText, boolean istGesperrt,
+			int tID) {
 		super();
 		this.aID = aID;
 		this.bID = bID;
 		this.headline = headline;
 		this.zusammenfassung = zusammenfassung;
 		this.artikelText = artikelText;
+		this.istGesperrt = istGesperrt;
 		this.tID = tID;
-		this.aufrufe = aufrufe;
 	}
+	
 	public int getaID() {
 		return aID;
 	}

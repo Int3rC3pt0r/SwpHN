@@ -2,57 +2,92 @@ package dbmodel;
 
 public class Benutzer {
 	int bID;
-	String eMail;
-	String vorName;
-	String nachName;
-	String userGroup;
+	String email;
+	String vName;
+	String nName;
+	String pw;
+	String nickname;
+	String usergroup;
 	boolean istGesperrt;
-	String passwort;
-	
 	
 	public Benutzer() {
 		super();
+		bID = -1;
+		email = "";
+		vName = "";
+		nName = "";
+		pw = "";
+		nickname = "";
+		usergroup = "";
+		istGesperrt = false;
 	}
-	public Benutzer(int bID, String eMail, String vorName, String nachName, String userGroup, boolean istGesperrt,
-			String passwort) {
+
+	public Benutzer(int bID, String email, String vName, String nName, String pw, String nickname, String usergroup,
+			boolean istGesperrt) {
 		super();
 		this.bID = bID;
-		this.eMail = eMail;
-		this.vorName = vorName;
-		this.nachName = nachName;
-		this.userGroup = userGroup;
+		this.email = email;
+		this.vName = vName;
+		this.nName = nName;
+		this.pw = pw;
+		this.nickname = nickname;
+		this.usergroup = usergroup;
 		this.istGesperrt = istGesperrt;
-		this.passwort = passwort;
 	}
+	
+	public Benutzer(String email, String vName, String nName, String pw, String nickname, String usergroup,
+			boolean istGesperrt) {
+		super();
+		this.email = email;
+		this.vName = vName;
+		this.nName = nName;
+		this.pw = pw;
+		this.nickname = nickname;
+		this.usergroup = usergroup;
+		this.istGesperrt = istGesperrt;
+	}
+	
 	public int getbID() {
 		return bID;
 	}
 	public void setbID(int bID) {
 		this.bID = bID;
 	}
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getVorName() {
-		return vorName;
+	public String getvName() {
+		return vName;
 	}
-	public void setVorName(String vorName) {
-		this.vorName = vorName;
+	public void setvName(String vName) {
+		this.vName = vName;
 	}
-	public String getNachName() {
-		return nachName;
+	public String getnName() {
+		return nName;
 	}
-	public void setNachName(String nachName) {
-		this.nachName = nachName;
+	public void setnName(String nName) {
+		this.nName = nName;
 	}
-	public String getUserGroup() {
-		return userGroup;
+	public String getPw() {
+		return pw;
 	}
-	public void setUserGroup(String userGroup) {
-		this.userGroup = userGroup;
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getUsergroup() {
+		return usergroup;
+	}
+	public void setUsergroup(String usergroup) {
+		this.usergroup = usergroup;
 	}
 	public boolean isIstGesperrt() {
 		return istGesperrt;
@@ -60,71 +95,6 @@ public class Benutzer {
 	public void setIstGesperrt(boolean istGesperrt) {
 		this.istGesperrt = istGesperrt;
 	}
-	public String getPasswort() {
-		return passwort;
-	}
-	public void setPasswort(String passwort) {
-		this.passwort = passwort;
-	}
-	@Override
-	public String toString() {
-		return "Benutzer [bID=" + bID + ", eMail=" + eMail + ", vorName=" + vorName + ", nachName=" + nachName
-				+ ", userGroup=" + userGroup + ", istGesperrt=" + istGesperrt + ", passwort=" + passwort + "]";
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + bID;
-		result = prime * result + ((eMail == null) ? 0 : eMail.hashCode());
-		result = prime * result + (istGesperrt ? 1231 : 1237);
-		result = prime * result + ((nachName == null) ? 0 : nachName.hashCode());
-		result = prime * result + ((passwort == null) ? 0 : passwort.hashCode());
-		result = prime * result + ((userGroup == null) ? 0 : userGroup.hashCode());
-		result = prime * result + ((vorName == null) ? 0 : vorName.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Benutzer other = (Benutzer) obj;
-		if (bID != other.bID)
-			return false;
-		if (eMail == null) {
-			if (other.eMail != null)
-				return false;
-		} else if (!eMail.equals(other.eMail))
-			return false;
-		if (istGesperrt != other.istGesperrt)
-			return false;
-		if (nachName == null) {
-			if (other.nachName != null)
-				return false;
-		} else if (!nachName.equals(other.nachName))
-			return false;
-		if (passwort == null) {
-			if (other.passwort != null)
-				return false;
-		} else if (!passwort.equals(other.passwort))
-			return false;
-		if (userGroup == null) {
-			if (other.userGroup != null)
-				return false;
-		} else if (!userGroup.equals(other.userGroup))
-			return false;
-		if (vorName == null) {
-			if (other.vorName != null)
-				return false;
-		} else if (!vorName.equals(other.vorName))
-			return false;
-		return true;
-	}
-	
 	
 	
 	
